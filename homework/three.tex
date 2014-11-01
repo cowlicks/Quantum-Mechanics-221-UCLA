@@ -1,0 +1,183 @@
+\input{physics_header.tex}
+\usepackage{amsfonts, amsmath, amsthm}
+
+% a matter of taste
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{0pt}
+
+\newtheorem*{exer}{Exercise}
+
+% A few macros: get better qm physics ones:
+\newcommand{\lam}{\lambda}
+
+\begin{document}
+
+\textbf{Homework 3 -- Quantum Mechanics} \\
+
+\hrule
+
+% Problem list
+\begin{minipage}{.80\linewidth}
+    \flushleft
+    Ch 2: 17, 18, 19, 20, 22 \\
+\end{minipage}
+\begin{minipage}{.20\linewidth}
+    \flushright
+    % whoami
+    Blake Griffith
+\end{minipage}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% Problems
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{exer}[2.17]
+
+    Consider again a one-dimensional simple harmonic oscillator. Do the
+    following algebraically, that is, without using wave functions.
+
+    \begin{enumerate}
+        \item Construct a linear combination of $\ket{0}$ and $\ket{1}$
+            such that $\avg{x}$ is as large as possible.
+
+        \item Suppose the oscillator is in the state constructed in (a)
+            at $t=0$. What is the state vector for $t>0$ in the
+            Schr\"{o}dinger picture? Evaluate the expectation value
+            $\avg{x}$ as a function of for $t>0$ using (i) the
+            Schr\"{o}dinger picture and (ii) the Heisenberg picture.
+
+        \item Evaluate $\avg{\delta x)^2}$ as a function of time using
+            either picture.
+
+    \end{enumerate}
+
+\end{exer}
+
+\begin{proof}
+
+    Put the proof here.
+
+\end{proof}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{exer}[2.18]
+
+    Show for the one-dimensional simple harmonic oscillator
+    \[
+        \bra{0} e^{ikx} \ket{0} = \exp[- k^2 \bra{0} x^2 \ket{0} / 2]
+    \]
+    where $x$ is the positoin \it{operator}
+    
+\end{exer}
+
+\begin{proof}
+
+    shits
+
+\end{proof}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{exer}[2.19]
+
+    A coherent state of a one-dimensional simple harmonic oscillator is
+    defined to be an eigen state of the (non-Hermition) annihilation
+    operator $a$:
+    \[
+        a\ket{\lam} = \lam \ket{\lam}
+    \]
+    
+    where $\lam$ is, in general, a complex number.
+    \begin{enumerate}
+        \item Prove that 
+            \[
+                \ket{\lam} = e^{\abs{\lam}^2 / 2} e^{\lam
+                a^\dagger} \ket{0}
+            \]
+
+        \item Prove the minimum uncertainty relation for such a state.
+
+        \item Write $\ket{\lam}$ as 
+            \[
+                \ket{\lam} = \sum{\inf}{n = 0} f(n) \ket{n}
+            \]
+
+            Show that the distribution $\abs{f(n)}^2$ with respect to
+            $n$ is of the Poisson form. Find the most probabble value of
+            $n$, hence of $E$.
+
+        \item Sshow that a coherent state can also be obtained by
+            applying the translation (finite-displacement) operator
+            $e^-ipl/\hbar$ (where $p$ is the momentum operator, and
+            $l$ is the displacement distance) to the ground state. (See
+            also Gottfried 1966, 262-64.)
+
+    \end{enumerate}
+\end{exer}
+
+\begin{proof}
+
+    shits
+
+\end{proof}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{exer}[2.20]
+
+    Let
+    \[
+        J_{\pm} = \hbar a^{\dagger}_{\pm} a_{\mp}\text{,} \qquad
+        J_z = \frac{\hbar}{2}\left(a^{\dagger}_{+} - a^{\dagger}_{-}
+        a_{-}\right)\text{,} \qquad
+        N = a^{\dagger}_{+}a_+ + a^{\dagger}_{-} a_-
+    \]
+    
+    where $a_{\pm}$ and $a^{\dagger}_{\pm}$ are the annihilation and
+    creation operators of two \it{independent} simple harmonic
+    oscillator satisfying the usal simple hormonic oscillator
+    commutation relations. Prove
+    \[
+        [J_z, J_{\pm}] = \pm \hbar J_\pm , \qquad
+        [\v{J}^2, J_z] = 0, \qquad
+        \v{J}^2 = \left(\frac{\hbar^2}{2}\right) N \left[ \frac{N}{2} +
+        1 \right]
+    \]
+
+\end{exer}
+
+\begin{proof}
+
+    shits
+
+\end{proof}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{exer}[2.22]
+
+    Consider a particle of mass $m$ subject to a one-dimensional
+    potential of the following form:
+    \[
+        V =
+        \begin{cases}
+            \frac{1}{2} k x^2 & \text{for } x > 0\\
+            \infty & \text{for } x < 0
+        \end{cases}
+    \]
+    \begin{enumerate}
+        \item What is the ground-state energy?
+        \item What is the expectation value $\avg{x^2}$ for the ground
+            state?
+    \end{enumerate}
+
+\end{exer}
+
+\begin{proof}
+
+    shits
+
+\end{proof}
+
+\end{document}
