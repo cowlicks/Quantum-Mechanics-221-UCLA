@@ -1,0 +1,161 @@
+\input{../physics_header.tex}
+\usepackage{amsfonts, amsmath, amsthm}
+
+% a matter of taste
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{0pt}
+
+\newtheorem*{exer}{Exercise}
+
+% A few simple macros for group theory.
+\newcommand{\floor}{\text{floor }}
+\newcommand{\img}{\text{img }}
+\newcommand{\lcm}{\text{lcm }}
+\newcommand{\aut}{\text{Aut }}
+\newcommand{\cycle}[1]{(\mathbf{#1})}
+
+\begin{document}
+
+\textbf{Homework 6 -- Quantum Mechanics} \\
+
+\hrule
+
+% Problem list
+\begin{minipage}{.80\linewidth}
+    \flushleft
+    Ch 3: 1, 2, 4, 16 \\
+\end{minipage}
+\begin{minipage}{.20\linewidth}
+    \flushright
+    % whoami
+    Blake Griffith
+\end{minipage}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% Problems
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{exer}[3.1]
+
+    Find the eigenvalues and eigenvectors of 
+    $\sigma_y = \begin{pmatrix}
+        0 & -i \\ 
+        i & 0
+    \end{pmatrix}$
+    . Suppose an electron is in the spin state $
+    \twobyone{\alpha}{\beta} $. If $S_y$ is measured, what is the
+    probability of the result $\hbar / 2$?
+
+
+\end{exer}
+
+\begin{proof}
+
+    \begin{enumerate}
+        \item We begin by solving the charachteristic equation to find
+            the eigenvalues of $\sigma_y$:
+            \[
+            \begin{vmatrix}
+                -\lambda & -i \\
+                i & -\lambda
+            \end{vmatrix} = \lambda^2 -  1 = 0 \implies
+            \boxed{\lambda = \pm 1}
+            \]
+            Now we find the corresponding eigenvectors, for $\lambda =
+            -1$:
+            \[
+            \sigma_y \twobyone{a}{b} = \twobyone{-a}{-b} \implies 
+            -ib = -a \qquad ai = -b \implies
+            \boxed{\v{X}(\lambda = -1) =
+            \frac{1}{\sqrt{2}}\twobyone{1}{-i}}
+            \]
+            for $\lambda = 1$:
+            \[
+            \sigma_y \twobyone{a}{b} = \twobyone{a}{b} \implies 
+            -ib = a \qquad ai = b \implies
+            \boxed{\v{X}(\lambda = 1) =
+            \frac{1}{\sqrt{2}}\twobyone{1}{i}}
+            \]
+            
+        \item
+            The probability of measuring $S_y = \hbar/2$ (spin up in the
+            $y$ basis) is $\left|\bra{\psi_{y+}} S_y
+            \ket{\psi}\right|^2$. Where is $\bra{\psi_{y+}}$ is the
+            eigenstate corresponding to the
+            $S_y$ ``up'' eigenvalue ($\lambda = 1$). Which we found
+            above since $S_y = \frac{\hbar}{2}\sigma_y$. So we have
+            \[
+                \left| \bra{\psi_{y+}} S_y \ket{\psi} \right|^2 \implies
+                \frac{\hbar^2}{8} \left|
+                    \begin{pmatrix} 1 & i \end{pmatrix}
+                    \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}
+                    \twobyone{\alpha}{\beta} \right|^2 \implies 
+                    \boxed{\frac{\hbar^2}{8}(\alpha^2 + \beta^2)}
+            \]
+
+    \end{enumerate}
+
+
+\end{proof}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{exer}[3.2]
+
+    Find by explicit construction using Pauli matrices, the eigenvalues
+    for the Hamiltonian
+    \[
+        H = -\frac{2\mu}{\hbar} \v{S} \cdot \v{B} 
+    \]
+    for a spin $\frac{1}{2}$ particle in the presence of a magnetic
+    field $\v{B} = B_x \hat{\v{x}} + B_y \hat{\v{y}} + B_z \hat{\v{z}}$.
+
+\end{exer}
+
+\begin{proof}
+
+\end{proof}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{exer}[3.4]
+
+    The spin-dependent Hamiltonian of an electron-positron system in the
+    presence of a uniform magnetic field in the $z$-direction can be
+    written as
+
+    \[
+        H = A \v{S}^{e^-} \cdot \v{S^{e^+}} + \frac{e B}{mc}
+        \left(S^{e^-}_{z} - S^{e^+}_{z} \right)
+    \]
+
+    Suppose the spin function of the system is given by $\chi^{e^-}_+
+    \chi^{e^+}_-$.
+    \begin{enumerate}
+        \item Is this an eigenfunction of $H$ in the limit $A \to
+            0$, $eB/mc \not= 0$? If it is, what is the energy eigenvalue?
+            If it is not, what is the expectation value of $H$?
+        \item Solve the same problem when $eB/mc \to 0$, $A \not= 0$.
+    \end{enumerate}
+
+\end{exer}
+
+\begin{proof}
+
+\end{proof}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{exer}[3.16]
+
+    Show that the orbital angular-momentum operator $\v{L}$ commutes
+    with both the operators $\v{p}^2$ and $\v{x}^2$; that is, prove
+    (3.7.2).
+
+\end{exer}
+
+\begin{proof}
+
+\end{proof}
+
+\end{document}
