@@ -31,15 +31,15 @@
     Blake Griffith
 \end{minipage}
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Problems
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \begin{exer}[3.1]
 
-    Find the eigenvalues and eigenvectors of 
+    Find the eigenvalues and eigenvectors of
     $\sigma_y = \begin{pmatrix}
-        0 & -i \\ 
+        0 & -i \\
         i & 0
     \end{pmatrix}$
     . Suppose an electron is in the spin state $
@@ -64,19 +64,19 @@
             Now we find the corresponding eigenvectors, for $\lambda =
             -1$:
             \[
-            \sigma_y \twobyone{a}{b} = \twobyone{-a}{-b} \implies 
+            \sigma_y \twobyone{a}{b} = \twobyone{-a}{-b} \implies
             -ib = -a \qquad ai = -b \implies
             \boxed{\v{X}(\lambda = -1) =
             \frac{1}{\sqrt{2}}\twobyone{1}{-i}}
             \]
             for $\lambda = 1$:
             \[
-            \sigma_y \twobyone{a}{b} = \twobyone{a}{b} \implies 
+            \sigma_y \twobyone{a}{b} = \twobyone{a}{b} \implies
             -ib = a \qquad ai = b \implies
             \boxed{\v{X}(\lambda = 1) =
             \frac{1}{\sqrt{2}}\twobyone{1}{i}}
             \]
-            
+
         \item
             The probability of measuring $S_y = \hbar/2$ (spin up in the
             $y$ basis) is $\left|\bra{\psi_{y+}} S_y
@@ -89,7 +89,7 @@
                 \frac{\hbar^2}{8} \left|
                     \begin{pmatrix} 1 & i \end{pmatrix}
                     \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}
-                    \twobyone{\alpha}{\beta} \right|^2 \implies 
+                    \twobyone{\alpha}{\beta} \right|^2 \implies
                     \boxed{\frac{\hbar^2}{8}(\alpha^2 + \beta^2)}
             \]
 
@@ -98,14 +98,14 @@
 
 \end{proof}
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \begin{exer}[3.2]
 
     Find by explicit construction using Pauli matrices, the eigenvalues
     for the Hamiltonian
     \[
-        H = -\frac{2\mu}{\hbar} \v{S} \cdot \v{B} 
+        H = -\frac{2\mu}{\hbar} \v{S} \cdot \v{B}
     \]
     for a spin $\frac{1}{2}$ particle in the presence of a magnetic
     field $\v{B} = B_x \hat{\v{x}} + B_y \hat{\v{y}} + B_z \hat{\v{z}}$.
@@ -114,9 +114,34 @@
 
 \begin{proof}
 
+    We rotate our coordinate system so that $\v{B}$ points in the
+    $\hat{\v{z}}$ direction at the point of the particle. Then our
+    Hamiltonian becomes
+    \[
+        H = - \frac{2 \mu B}{\hbar} S_z = \omega S_z
+    \]
+    Recall the eigenvalue for $S_z$ is $\pm \frac{\hbar}{2}$, so at $t =
+    0$ we have:
+    \[
+        H\ket{\psi} = \mp \frac{2 \mu B}{2}\ket{\psi}
+    \]
+    To calculate the time evolution note that the time evolution
+    operator is:
+    \[
+        U(t) = \exp{\frac{-i H t}{\hbar}} = \exp{\frac{-i \omega t
+        S_z}{\hbar}} \implies U(t)\ket{\psi} = \exp{\frac{\mp i \omega
+        t}{2}}
+    \]
+    Combining these:
+    \[
+        H\ket{\psi(t)} = H U(t) \ket{\psi} = \boxed{\mp \frac{2 \mu
+        B}{2} \exp \left(\frac{\mp i \omega t}{2}\right)\ket{\psi}}
+    \]
+    Where do Pauli matrices come into this?
+
 \end{proof}
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \begin{exer}[3.4]
 
@@ -142,9 +167,23 @@
 
 \begin{proof}
 
+    \begin{enumerate}
+        \item With $A \to 0$ the hamiltonian is just the term from the
+            electron and positron independent of interactions:
+            \[
+                H = \frac{e B}{mc} \left(S^{e^-}_{z} - S^{e^+}_{z}
+                \right)
+            \]
+
+        \item With $eB/mc \to 0$, $A \not= 0$ we have:
+            \[
+                H = A \v{S}^{e^-} \cdot \v{S^{e^+}}
+            \]
+    \end{enumerate}
+
 \end{proof}
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \begin{exer}[3.16]
 
@@ -155,6 +194,58 @@
 \end{exer}
 
 \begin{proof}
+
+    \begin{enumerate}
+        \item Looking at $[\v{L}, \v{p}^2] = \v{L}$ we see that each
+                $p_i$ much commute with each $\v{L}$ component so we
+                have
+            \[
+                [L_x, p^2_x + p^2_y + p^2_z] = [(\v{x}\times\v{p})_x, +
+                p^2_y + p^2_z] = [x_y p_z - x_z p_y,  p^2_x + p^2_y +
+                p^2_z]
+            \]
+            So we expressions of the form $[x_i p_j, p^2_k] =
+            \delta_{ij} i \hbar (2 p_k p_j)$, we prove this:
+            \[
+                [x_i p_j, p^2_k] = [x_i, p^2_k]p_j + x_i [p_k, p^2_j]
+            \]
+            the second term is zero so we have:
+            \[
+                [x_i p_j, p^2_k] = [x_i, p^2_k]p_j = [x_i, p_k p_k]p_j =
+                [x_i, p_k]p_k p_j + p_k[ x_i, p_k] p_j = 2 i \hbar p_k
+                p_j \delta_{ik}
+            \]
+            So for each angular momentum component we have:
+            \[
+                [L_x, p^2_x + p^2_y + p^2_z] = [x_y p_z - x_z p_y,
+                p^2_x + p^2_y + p^2_z] = [x_y p_z, p^2_y] - [x_z p_y,
+                p^2_z] = i2\hbar (p_y p_z  - p_z p_y) = i2\hbar [p_y,
+                p_z] = 0
+            \]
+            Which implies $[\v{L}, \v{p}^2] = 0$.
+
+        \item $[ \v{L}, \v{x}^2]$ reduces to a similar relation:
+            \[
+                [L_z, \v{x}^2] = [xp_y - yp_x, x^2 + y^2 + z^2]
+            \]
+            gives us expressions like $[x_i p_j, x^2_{k}] = x_i x_k (-i
+            2 \hbar \delta_{jk} )$, proof:
+            \[
+                [x_i p_j, x^2_k] = [x_i, x^2_k]p_j + x_i [p_j, x^2_k]
+            \]
+            The first term is zero so:
+            \[
+                x_i [p_j, x^2_k] = x_i ([p_j, x_k] x_k + x_k [p_j, x_k]) =
+                x_i x_k (- i 2 \hbar \delta_{jk})
+            \]
+            Applying this identity we get
+            \[
+                [L_z, \v{x}^2] = [xp_y, y^2] - [y p_x, x^2] =
+                -2i\hbar(xy- yx) = -2i\hbar [x, y] = 0
+            \]
+            Which implies $[\v{L}, \v{x}^2]$.
+
+    \end{enumerate}
 
 \end{proof}
 
